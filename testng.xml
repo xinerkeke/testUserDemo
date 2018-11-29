@@ -6,7 +6,7 @@
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
-
+		<listener class-name="main.com.util.TestngListener" />
 		<!-- 
 		<listener class-name="test.RetryListener"/>
 		 -->
@@ -14,7 +14,9 @@
 
 	<test name="testMaven">
 		<classes>
-			<class name="main.com.tests.testUserDemo" />
+			<class name="main.com.tests.LoginPageTest" />
+			<class name="main.com.tests.testUserMngPage"></class>
+			<class name="main.com.tests.testUserMngPage"></class>
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,0 +1,2 @@
+step1: init userDemo
+step2: run the test case in multisple broswer.

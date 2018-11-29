@@ -15,12 +15,11 @@ import org.testng.ITestResult;
 import main.com.base.TestBase;
 
 
-public class TakeScreenShot {
+public class TakeScreenShot extends TestBase{
 	
-	private Properties pps;
-	String time = (new SimpleDateFormat("yyyyMMddHHmmss")).format(new Date());
+	static String time = (new SimpleDateFormat("yyyyMMddHHmmss")).format(new Date());
 
-	public void ScreenShot(ITestResult result) throws IOException {
+	public static void ScreenShot(ITestResult result) throws IOException {
 		
 		pps = new Properties();
 		pps.load(new FileInputStream(System.getProperty("user.dir")
