@@ -1,0 +1,42 @@
+<project name="testUserDemo" default="test" basedir=".">
+	<!-- Define <testng> task -->
+	<taskdef name="testng" classname="org.testng.TestNGAntTask">
+		<classpath>
+			<pathelement location="lib/testng-6.9.12.jar" />
+		</classpath>
+	</taskdef>
+	<property name="testdir" location="bin" />
+	<property name="srcdir" location="src" />
+	<property name="libdir" location="lib" />
+	<property name="test-output-dir" location="test-output" />
+	<property name="full-compile" value="true" />
+	<path id="classpath.base" />
+	<path id="classpath.test">
+		<fileset dir="${libdir}">
+			<include name="**/*.jar" />
+		</fileset>
+		<pathelement location="${testdir}" />
+		<pathelement location="${srcdir}" />
+		<path refid="classpath.base" />
+	</path>
+	<target name="clean">
+		<delete>
+			<fileset dir="${testdir}" includes="**/*.class" />
+			<fileset dir="${test-output-dir}" includes="**/*"/>
+		</delete>
+	</target>
+	<target name="compile" depends="clean">
+		<javac srcdir="${srcdir}" destdir="${testdir}">
+			<classpath refid="classpath.test" />
+		</javac>
+	</target>
+	<target name="test" depends="compile">
+			<testng 
+						outputdir="${test-output-dir}" classpathref="classpath.test">
+						<xmlfileset dir="." includes="testng.xml" />
+						<sysproperty key="org.uncommons.reportng.title" value="MetricsData-测试报告" />  
+					</testng>
+			<!-- useDefaultListeners="false"
+								listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter" -->
+		</target>
+</project>

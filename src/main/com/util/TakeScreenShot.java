@@ -10,16 +10,18 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
 import main.com.base.TestBase;
+import main.com.base.TestBase01;
 
 
 public class TakeScreenShot extends TestBase{
 	
 	static String time = (new SimpleDateFormat("yyyyMMddHHmmss")).format(new Date());
 
-	public static void ScreenShot(ITestResult result) throws IOException {
+	public void ScreenShot(ITestResult result) throws IOException {
 		
 		pps = new Properties();
 		pps.load(new FileInputStream(System.getProperty("user.dir")
@@ -34,7 +36,7 @@ public class TakeScreenShot extends TestBase{
 		File outfile = new File(screenPath + "/"+methodName.substring(0, methodName.indexOf('(')) +"-" + time +".jpg");
 		
 		try {
-			File scrFile = ((TakesScreenshot) TestBase.driver).getScreenshotAs(OutputType.FILE);
+			File scrFile = ((TakesScreenshot) TestBase01.driver).getScreenshotAs(OutputType.FILE);
 			FileUtils.copyFile(scrFile, outfile);
 		} catch (IOException e) {
 			System.out.println("Screen shot error: " + screenPath);
