@@ -1,12 +1,10 @@
 <project name="testUserDemo" default="test" basedir=".">
 	<!-- Define <testng> task -->
-	<!--
 	<taskdef name="testng" classname="org.testng.TestNGAntTask">
 		<classpath>
-			<pathelement location="lib/testng-6.9.9.jar" />
+			<pathelement location="E:\apache-maven-3.3.9\mvn-repository\org\testng\testng\6.9.12\testng-6.9.12.jar" />
 		</classpath>
 	</taskdef>
-	-->
 	<property name="testdir" location="target" />
 	<property name="srcdir" location="src" />
 	<property name="libdir" location="lib" />
@@ -24,7 +22,7 @@
 	<target name="clean">
 		<delete>
 			<fileset dir="${testdir}" includes="**/*.class" />
-			<fileset dir="${test-output-dir}" includes="**/*"/>
+			<!--<fileset dir="${test-output-dir}" includes="**/*"/>-->
 		</delete>
 	</target>
 	<target name="compile" depends="clean">
@@ -35,8 +33,9 @@
 	<target name="test" depends="compile">
 			<testng 
 						outputdir="${test-output-dir}" classpathref="classpath.test">
+			        	<sysproperty key="file.encoding" value="UTF-8" />
 						<xmlfileset dir="." includes="testng.xml" />
-						<sysproperty key="org.uncommons.reportng.title" value="MetricsData-测试报告" />  
+						<sysproperty key="org.uncommons.reportng.title" value="MetaData-测试报告" />  
 					</testng>
 			<!-- useDefaultListeners="false"
 								listeners="org.uncommons.reportng.HTMLReporter,org.uncommons.reportng.JUnitXMLReporter" -->
