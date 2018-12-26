@@ -2,7 +2,7 @@
 	<!-- Define <testng> task -->
 	<taskdef name="testng" classname="org.testng.TestNGAntTask">
 		<classpath>
-			<pathelement location="lib/testng-6.9.12.jar" />
+			<pathelement location="lib/testng-6.9.9.jar" />
 		</classpath>
 	</taskdef>
 	<property name="testdir" location="bin" />
@@ -22,7 +22,7 @@
 	<target name="clean">
 		<delete>
 			<fileset dir="${testdir}" includes="**/*.class" />
-			<fileset dir="${test-output-dir}" includes="**/*"/>
+			<!--<fileset dir="${test-output-dir}" includes="**/*"/>-->
 		</delete>
 	</target>
 	<target name="compile" depends="clean">

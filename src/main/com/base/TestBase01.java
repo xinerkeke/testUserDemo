@@ -175,8 +175,8 @@ public class TestBase01 {
 	 */
 	public static boolean isTextPresent(WebDriver driver, String what) {
 		try {
-			String str = driver.findElement(By.tagName("body")).getText();
-			System.out.println(str);
+//			String str = driver.findElement(By.tagName("body")).getText();
+//			System.out.println(str);
 			return driver.findElement(By.tagName("body")).getText().contains(what);
 		} catch (Exception e) {
 			return false;
