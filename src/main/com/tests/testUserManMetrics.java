@@ -15,7 +15,6 @@ import main.com.pages.UserMngPageMetrics;
 import main.com.util.ReadExecl;
 import main.com.util.TestngListener;
 
-
 @Listeners({ TestngListener.class })
 public class testUserManMetrics extends TestBase01 {
 	
@@ -30,7 +29,7 @@ public class testUserManMetrics extends TestBase01 {
 		loginPage.login("admin", "admin");
  		
 		userMngPage = new UserMngPageMetrics();
-	//	WaitAndClickElmt("//ul[@id='topMenu']/li/a[text()='系统管理']");
+		WaitAndClickElmt("//ul[@id='topMenu']/li/a[text()='系统管理']");
 		WaitAndClickElmt("//html/body/div[1]/div/div[1]/div[2]/ul/li[3]");
 		WaitAndClickElmt("//li/div/span[@class='tree-title' and text()='用户管理']");
 	}
