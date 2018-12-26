@@ -7,7 +7,7 @@
 		</classpath>
 	</taskdef>
 	-->
-	<property name="testdir" location="bin" />
+	<property name="testdir" location="target" />
 	<property name="srcdir" location="src" />
 	<property name="libdir" location="lib" />
 	<property name="test-output-dir" location="test-output" />
@@ -24,7 +24,7 @@
 	<target name="clean">
 		<delete>
 			<fileset dir="${testdir}" includes="**/*.class" />
-			<!--<fileset dir="${test-output-dir}" includes="**/*"/>-->
+			<fileset dir="${test-output-dir}" includes="**/*"/>
 		</delete>
 	</target>
 	<target name="compile" depends="clean">
