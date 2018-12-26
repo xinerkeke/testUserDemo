@@ -1,10 +1,12 @@
 <project name="testUserDemo" default="test" basedir=".">
 	<!-- Define <testng> task -->
+	<!--
 	<taskdef name="testng" classname="org.testng.TestNGAntTask">
 		<classpath>
 			<pathelement location="lib/testng-6.9.9.jar" />
 		</classpath>
 	</taskdef>
+	-->
 	<property name="testdir" location="bin" />
 	<property name="srcdir" location="src" />
 	<property name="libdir" location="lib" />
