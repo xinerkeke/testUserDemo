@@ -10,14 +10,12 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
 
-import main.com.base.TestBase;
 import main.com.base.TestBase01;
 
 
-public class TakeScreenShot extends TestBase{
+public class TakeScreenShot extends TestBase01{
 	
 	static String time = (new SimpleDateFormat("yyyyMMddHHmmss")).format(new Date());
 
