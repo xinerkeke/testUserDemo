@@ -2,12 +2,12 @@
 	<!-- Define <testng> task -->
 	<taskdef name="testng" classname="org.testng.TestNGAntTask">
 		<classpath>
-			<pathelement location="E:\apache-maven-3.3.9\mvn-repository\org\testng\testng\6.9.12\testng-6.9.12.jar" />
+			<pathelement location="lib/testng-6.9.12.jar" />
 		</classpath>
 	</taskdef>
+	<property name="libdir" location="lib" />
 	<property name="testdir" location="target" />
 	<property name="srcdir" location="src" />
-	<property name="libdir" location="lib" />
 	<property name="test-output-dir" location="test-output" />
 	<property name="full-compile" value="true" />
 	<path id="classpath.base" />
@@ -15,14 +15,15 @@
 		<fileset dir="${libdir}">
 			<include name="**/*.jar" />
 		</fileset>
+
 		<pathelement location="${testdir}" />
 		<pathelement location="${srcdir}" />
 		<path refid="classpath.base" />
 	</path>
 	<target name="clean">
 		<delete>
-			<fileset dir="${testdir}" includes="**/*.class" />
-			<!--<fileset dir="${test-output-dir}" includes="**/*"/>-->
+			<fileset dir="${testdir}" includes="**/*" />
+			<fileset dir="${test-output-dir}" includes="**/*"/>
 		</delete>
 	</target>
 	<target name="compile" depends="clean">
