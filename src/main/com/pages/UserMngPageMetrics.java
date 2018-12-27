@@ -92,8 +92,8 @@ public class UserMngPageMetrics extends TestBase01{
 		/**
 		 * 新增按钮
 		 */
-		useradd.click();
-//		WaitAndClickElmt(useradd);
+//		useradd.click();
+		WaitAndClickElmt(useradd);
 		
 		loginName.clear();
 		loginName.sendKeys(loginname);
